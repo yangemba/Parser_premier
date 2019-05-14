@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  back:
+    image: parser:latest
+
+    volumes:
+      - .:/app/
+    ports:
+        - "8244:9001"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+    command: python Class_ob.py

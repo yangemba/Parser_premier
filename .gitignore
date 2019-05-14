@@ -2,3 +2,6 @@
 Parse_list.txt
 pip-selfcheck.json
 pyvenv.cfg
+__pycache__
+*.csv
+
