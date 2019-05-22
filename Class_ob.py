@@ -14,9 +14,11 @@ today = datetime.date.today()
 with open(f'{str(today)}.csv', 'w') as file:
     file.seek(0)
 
+
 class ProhodRazdel:
     Url = None
     list_names2 = []
+
     def get_lin_list(self):
         response = requests.get(self.Url)
         self.soup = bs4.BeautifulSoup(response.text, "html.parser")
@@ -41,9 +43,13 @@ def pars_razdel(link):
 def prog(list):
     parsed = []
     for key in list:
-        k = find_qnt_ads.find_qnt(key)
-        j = find_qnt_ads.statistic(key)
-        parsed.append(key + ',' + list[key] + f", {j[0]} стр, {j[1]} из {j[2]}, {j[3]} %, usual : {k[0]}-actual :{k[1]}-premium : {k[2]} \n***\n ")
+        try:
+            k = find_qnt_ads.find_qnt(key)
+            j = find_qnt_ads.statistic(key)
+            parsed.append(key + ',' + list[key] + f", {j[0]} стр, {j[1]} из {j[2]}, {j[3]} %, usual : {k[0]}-actual :{k[1]}-premium : {k[2]} \n***\n ")
+        except:
+            parsed.append("error\n***\n")
+
     return parsed
 
 
@@ -57,6 +63,3 @@ def parse(list_to_parse):
 
 
 parse(LIST_TO_PARSE)
-
-
-
