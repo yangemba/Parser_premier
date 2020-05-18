@@ -108,9 +108,6 @@ def statistic(link):
                 else:
                     counter = counter + lio
                     page_num = page_num + 1
-
-
-
         else:
             page_num = 1
             KEY_WORD = 'день'
@@ -136,8 +133,6 @@ def statistic(link):
                 else:
                     counter = counter + lio
                     page_num = page_num + 1
-
-
 
     else:
         page_num = 1
@@ -170,11 +165,6 @@ def statistic(link):
 
     percent = round((counter / int(qnt_st_chpt) * 100), 2)
     return page_num, counter, qnt_st_chpt, percent
-
-
-
-
-
 
 
 

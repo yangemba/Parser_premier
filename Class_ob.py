@@ -47,8 +47,8 @@ def prog(list):
             k = find_qnt_ads.find_qnt(key)
             j = find_qnt_ads.statistic(key)
             parsed.append(key + ',' + list[key] + f", {j[0]} стр, {j[1]} из {j[2]}, {j[3]} %, usual : {k[0]}-actual :{k[1]}-premium : {k[2]} \n***\n ")
-        except:
-            parsed.append("error\n***\n")
+        except Exception as ex:
+            parsed.append(f"error {ex}\n***\n")
 
     return parsed
 
