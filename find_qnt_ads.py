@@ -22,7 +22,6 @@ def take_info(num='1'):
     return text_to_parse
 
 
-
 def find_qnt(link):
 
     response = requests.get(link)
