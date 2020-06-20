@@ -4,6 +4,10 @@ PAGE_INDICATOR = '?page='
 RETRY_REQUEST_TIME = 3
 RETRIES_QNT = 3
 
+DATA_OFF_WORD_1 = 'день'
+DATA_OFF_WORD_2 = 'дня'
+DATA_OFF_WORD_3 = 'дней'
+
 ###########################################
 """Constants for handlers.
 
