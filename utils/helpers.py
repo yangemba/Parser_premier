@@ -27,7 +27,7 @@ def exception_retry(repeats=RETRIES_QNT, delay_sec=RETRY_REQUEST_TIME) -> \
     return wrapper
 
 
-@exception_retry
+# @exception_retry
 def req_request(method: str, **kwargs) -> object:
     """
     Method for handling errors during single request
@@ -35,6 +35,7 @@ def req_request(method: str, **kwargs) -> object:
     :param kwargs: request keyword arguments
     :return: http response
     """
+    time.sleep(0.5)
     try:
         response = requests.request(method=method, **kwargs, timeout=3)
         return response
